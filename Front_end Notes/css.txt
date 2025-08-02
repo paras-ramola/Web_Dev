@@ -1,0 +1,592 @@
+*MDN reference
+
+CSS(Cascading Style Sheet)
+It is a language that is used to describe the style of a document
+
+*Basic Syntax:
+selector{property:value}
+eg:h1{
+    color:red;
+}
+
+*Including Style
+1.Inline:
+    <h1 style="background-color/color:red">Hello World</h1>
+2.<style> tag:inside head tag
+    <style>
+        h1{
+            color:red;
+        }
+    </style>
+*3.External StyleSheet
+    Writing Css in a seprate document &linking it with css file.
+
+*Inline style takes prefernce w.r.t external StyleSheet
+
+***************************************************************************************************8
+
+*Color property
+Use to set the color of foreground
+eg:color:red;
+   color:pink;
+
+*Background Color
+Use to set the color of the Background
+eg:background-color:red;
+
+*Color Systems
+1.RGB(red ,green,blue)
+range:0-255
+color:rgb(255,0,0)->red
+color:rgb(0,255,0)->green
+rgb(255,255,0)->yellow
+
+2.Hex(Hexdecimal)
+min:00  max:ff->255
+color:#ff0000->red
+#ffff00->yellow
+
+*Selectors
+1.Universal Selectors:For whole
+    *{}
+2.Element Selectors:for particular element
+    h1{}
+3.Id Selector:For particular id
+    #myId{}
+4.Class Selector:For a whole class
+    .myClass{}
+5.Child selector (>): is used to select direct child elements 
+parent > child {
+  /* styles */
+}
+div >p{
+    //select only those  which are directly present inside div(neseted p are not selected )
+}
+6.Descendant Selector : is used to target all descendants of an element, regardless of how deeply nested they are in the DOM.
+div p {//select all the p which are present inside p
+  /* styles */
+}
+
+7.Pseudo-selectors : are used to define styles for elements based on their state, position, or other specific criteria without needing to add additional classes or IDs.
+eg: button:hover {
+        background-color: blue;
+    }
+    a:link{//color of all unvisited link in anchor tags
+        background-color: green;
+    }
+Structural Pseudo-Classes
+:first-child – Selects the first child of a parent.
+:last-child – Selects the last child of a parent.
+:nth-child(n) – Selects the nth child (1-based index).
+:nth-last-child(n) – Selects the nth child from the end.
+:only-child – Selects an element that is the only child of its parent.
+Form and User Interaction
+:focus – Selects an element when it is focused.
+:hover – Selects an element when the user hovers over it.
+:active – Selects an element when it is being activated (e.g., clicked).
+:checked – Selects checked checkboxes or radio buttons.
+:disabled – Selects disabled form elements.
+Pseudo-Elements
+Pseudo-elements allow you to style specific parts of elements or create virtual elements.
+::before – Adds content before an element.
+::after – Adds content after an element.
+::first-line – Styles the first line of text in a block.
+::first-letter – Styles the first letter of text in a block.
+::placeholder – Styles placeholder text in input fields.
+::selection - styles  the portion ofelement that a user selects/highlights using their mouse or keyboard.
+
+*jo property baad m ayegi uski priority jyada hogi
+
+*************************************************************************************
+
+
+
+*Text Properties
+1.text align
+syntax:text-align:left/right/center
+In English: text-align:start ->left/end->right
+    
+The text-align property aligns the inline-level content (like text, inline images, or inline-block elements) inside a block-level container.
+
+2.Text Decoration
+syntax:text-decoration:underline/overline/line-through
+*you can also change color & style of decoration
+
+3.font-weight
+syntax:font-weight:normal/bold/bolder/lighter
+        font-weight:100-900
+
+4.font-family:font style
+syntax:font-family:arial
+
+5.line-height:height of an individual line
+syntax:line-height:2px/normal
+
+6.text-transform
+syntax:text-transform:uppercase/lowercase/capitalize/none
+
+7.text-indent: Specifies the indentation(space from beg.) for the first line of text in a block.
+
+8.text-overflow:  is used to specify how overflowing text is handled when it exceeds the boundaries of its container. 
+text-overflow: clip | ellipsis | string;
+->clip (default): Clips text with no visual indicator.
+->ellipsis: Clips text and adds ....
+->string: Clips text and adds a custom string.
+
+9.word-break:  specifies how words should break when reaching the end of a line.
+syntax: word-break:normal (default) | break-word |break-all|keep-all
+****************************************************************************************************
+
+*Box Model in Css
+
+1.Height:it sets the content area height of the element
+syntax:div{
+    height:50px;
+}
+
+2.Width:it sets the content area Width of the element
+syntax:div{
+    width:50px;
+}
+
+3.Border:Used to set an element's Border
+Syntax:border-width:2px;
+    border-style:solid/dotted/dashed/doubled;
+    border-color:black;
+
+*shorthand:
+syntax:border:2px solid black
+
+*border from top/right/left/bottom only
+border-top/right/left/bottom:2px solid black
+
+
+*border-radius:
+to round the corners of an element's outer border edge
+syntax:border-radius:10px;
+       border-radius:50%;
+
+*to create circle:
+height & width same,border-radius:50%
+
+4.Padding:space b/w border & content
+padding-left/padding-right/padding-top/padding-bottom
+
+*shorthand
+syntax:padding:50px;(for all directions)
+       padding:5px 2px 4px 1px;
+               Top Rig Bot Left
+
+Shorthand Rules for Padding:
+
+- One Value:
+padding: 15px; → Applies 15px to all sides (top, right, bottom, left).
+- Two Values:
+padding: 15px 30px; → First value is for top and bottom, second value is for left and right.
+- Three Values:
+padding: 15px 30px 10px; → First value is top, second is left and right, third is bottom.
+- Four Values:
+padding: 15px 30px 10px 5px; → Values are applied clockwise: top, right, bottom, left.
+
+5.Margin:area b/w two boxes
+margin-right/margin-left/margin-Top/margin-bottom.
+
+*shorthand
+syntax:margin:50px;(for all directions)
+       margin:5px 2px 4px 1px;
+               Top Rig Bot Left
+
+6.gap property : is used to control the spacing between items in layouts like Grid, Flexbox, and Multi-column. It’s a cleaner alternative to adding margins between items individually.
+It doesn’t affect the space around the container—only between child elements.
+
+************************************************************************************
+
+*Display property
+display:inline/block/inline-block
+
+1.inline:Takes only the space req by the eleemnt.(no margin/padding)
+Disadvantages of Inline Elements:
+Cannot Set Width/Height: Inline elements ignore width and height.
+Limited Box Model Control: Vertical margin and padding have no effect.
+Cannot Contain Block Elements: Block-level elements are invalid inside inline elements.
+No Line Breaks: Inline elements do not create a new line, making layout control harder.
+
+2.block:Takes full space available in width.
+
+3.inline-block:Similar to inline but we can set margin & padding.
+inline-block allows you to set width and height
+
+4.none-TO remove element from document flow.
+
+5.flex,grid,inline-flex,inline-grid
+
+*Visiblity:
+syntax:visiblity:hidden;
+
+Note:When visiblity is set to none,space for the element is reserved.But for display set to none,no space is reserved or blocked for the element.
+
+*Alpha Channel:decides opacity
+opacity(0 to 1)
+synatx:rgba(255,0,0,0.5)
+
+
+************************************************************************************
+
+
+Shadows & Outlines
+
+box-shadow
+Syntax:
+box-shadow: offset-x offset-y blur-radius spread-radius color;
+Parameters:
+offset-x: Horizontal shift (positive = right, negative = left).
+offset-y: Vertical shift (positive = down, negative = up).
+blur-radius: Blur intensity (default: 0).
+spread-radius: Shadow size adjustment (default: 0).
+color: Shadow color (default: black).
+inset: Makes the shadow appear inside.
+
+
+text-shadow Short Notes
+Syntax:
+text-shadow: offset-x offset-y blur-radius color;
+
+outline in CSS Short Notes
+The outline property draws a line around an element, but it does not affect the element's layout.
+
+Syntax:
+outline: outline-width outline-style outline-color;
+
+outline-offset
+
+************************************************************************************
+
+
+
+*Units in Css
+
+
+1.Absolute
+pixels(px)
+96px=1inch
+syntax:font-size:2px
+
+2.Relative
+%,em,rem
+1.%:size relative to element's parent object.
+
+2.em:relative to element's parent text .
+
+syntax:1em->same as parent's text size
+2em->double as parent's text size
+
+Note:font-size:relative to parent font
+width:relative to it's own text size
+
+3.Rem(root Em)
+rem:font size of the root element
+syntax: width:5rem-> width is equal to 5 times the font size of root elment(16 pixels)
+
+4.Others->for Responsive website
+vh:relative to 1% viewport(window) height
+vw:relative to 1% viewport width
+
+5.min-width,max-width|min-height ,max-height
+
+6.Percetntage:of parent height/width
+*************************************************************************************************
+Styling Lists
+<li><li>
+deafult display:list-items
+//to remove marker
+list-style=none;
+
+
+
+overflow :controls how content is handled when it exceeds the size of its container.
+
+Syntax:
+overflow: visible | hidden | scroll | auto;
+
+white-space: nowrap;   prevents text from wrapping to the next line, even if it exceeds the container's width
+
+*************************************************************************************************
+
+
+*Position:
+sets how an element is positioned in a document
+syntax;position:static/relative/absolute/fixed
+1.static:default position(Top,right,left,bottom & z-index have no effect)
+
+2.relative:element is relative to itself.(Top,right,bottom,left & z-index will work)
+
+3.absolute:positioned relative to it's closest positioned(non-static) ancestor.(removed from the flow)
+//only works if parent is non-static(abolute/relative/sticky/fixed)
+//Exception: transform,filter,or prespective Propertie can also make an element appear as positioned
+//eg:transform:translate(0)
+//filter:invert(0)
+//prespective:0em;
+
+4.fixed:positioned relative to it's browser.(removed from flow)
+use->for navbar
+5.sticky:posioned based on user's scroll position.
+element tb fix ho jayega jb vo apni given position m pahuch jayega
+
+6.z-index:It decides the stack level of elements.Overlapping elements with a larger z-index cover those with a smaller one.
+eg:z-index;auto(0)
+    z-index:1/2/....(over)
+    z-index:-1/-1/....(under)
+Note:Default:pehle elment(under),baad m elmenet(over)
+    does not work for static
+
+*Background Image:Used to set an image as background
+syntax:background-image:url("image.jpeg")
+
+*Background size:
+syntax:background-size:cover/contain/auto
+cover->complete fit in frame
+contain->full image in frame &visible
+for extra space image will be repeated
+*for no repetition:
+syntax:background-repeat:no repeat;
+auto->By-default
+**************************************************************************************
+
+Vraiables in css: variables allow you to store values that you can reuse throughout your stylesheet. They are defined using the -- prefix and are typically declared inside a :root or any other selector.
+
+Rule:
+1.Start with -- 
+2.Inside->   :root { }
+eg:
+:root {
+  --primary-color: #3498db;
+  --font-size: 16px;
+}
+.class{
+    background-color:var(--primary-color)
+}
+
+float :
+ property is used to position elements to the left or right within their container, allowing text or other elements to wrap around them.
+
+Syntax: float: left | right | none | inherit;
+
+
+*******************************************************************************************************
+
+
+*FlexBox(Flexible Box Layout)
+It is a one-dimensional layout method for arranging items in rows or coloumns.
+flex conatiner/flex items/main axis/cross axis
+**to use FlexBox**
+syntax:display:flex
+
+1.FlexBox Direction
+It sets how the items are palced in the flex container,along which axis and direction.
+syntax:flex-direction:row(default)/row-reverse/column/column-reverse
+(i)row:main-axis:left->right
+(ii)row-reverse:main-axis:right->left
+(iii)column:main-axis:top->bottom
+(iv)column-reverse:main-axis:bottom->top
+
+Note:flex items always tries to fit inside  container(parent) even if they have size larger than container
+
+2.Flex Properties:for flex container
+  (i)justify-content:alignment along the main axis.
+    flex-start/flex-end/centre/space-evenly
+        *flex-start:at start(left for row &right for row-reverse)
+        (top for column & bottom for column-reverse)
+        *flex-end:at end(right for row & left for row-reverse)
+        (bottom for column & top for column-reverse)
+        *space-around/space-evenly/space-between:evenly spaced
+  (ii)flex-wrap:The flex-wrap CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. 
+  If wrapping is allowed, it sets the direction that lines are stacked.
+  wrapping leaves space around elements.
+  nowrap/wrap/wrap-reverse
+  (iii)align-items:alignment along the cross-axis.
+        flex-start/flex-end/center/strech(default)/baseline(align acc to font text)
+  (iii)align-content:alignment of space  between & around the content area.
+
+  *align-items for single row,align-content multiple rows
+
+3.Flex Properties:for flex items
+    (i)align-self:alignment of individual alogn the cross axis.
+*align self will have more priority as compared to other align property
+
+    (ii)flex-grow:how much a flex item will grow relative to the rest of the flex items if space is available
+        *flex-shrink:0;will not shrink,its dimension will remain same
+        * <1 shrink more, >1 shrink less
+
+    (iii)flex-shrink:how much a flex item will shrink relative to the rest of the  space is available
+
+    in which direction item will grow/shrink -> flex-direction
+
+    (iv)Flex-basis : The flex-basis property defines the initial size of a flex item before it adjusts itself based on the available space in the flex container.
+    Eg:.item flex-basis: 100px; -. Each .item will start with 100px of space.
+
+
+    Shorthand :
+    flex: flex-grow flex-shrink flex-basis;
+    Eg: When you write flex: 1, it expands to->flex: 1 1 0; (flex-grow (1),flex-shrink (1), flex-basis (0))
+    (iv) order:to set order of items 
+
+*Media Queries:
+Help create a resposive website
+syntax:
+ (i)@media(width:600px){
+        div{
+            background-color:red;
+        }
+    }
+
+ (ii)@media(min-width/max-width:600px){
+        div{
+            background-color:red;
+        }
+    }
+ (iii)@media(min-width:200px)and(max-width:300px){
+    div{
+        background-color:red
+    }
+ }
+ *************************************************************************************
+
+ *Transitions:
+    transitions enable you to define the transition between two states of an element.
+
+    (i)transition property:property you want ot transition(font-size,width etc.)
+    (ii)transition-duration:2s/4ms
+    (iii)transition-timing-function:ease-in/ease-out/linear/steps()..
+    (iv)transition-delay:2s/4ms..
+
+*Transition shorthand:
+    transition:property|duration|time-func|delay
+eg:transition:font-size 2s ease-in-out 0.2s
+
+*pseudo class:mouse ke action se element k state m ky change hota h
+syntax:div:hover/active...
+eg:div:hover{
+    background-color: blue;
+    color: white;
+}
+
+*CSS Transform:
+Used to apply 2D & 3D transformation to an element
+ (i)rotate:
+    syntax:
+     transform:rotate(45deg);
+     rotate:45deg;
+     rotateX:45deg;
+     rotateY:45deg;
+ (ii)scale:
+    syntax:
+    transform:scale(2);/for x,y same time
+    transform:scale(0.5);
+    transform:scale(1,2);/(x,y)
+
+    transform:scaleX(0.5);/for x
+    transform:scaleY(0.5);/for y
+ (iii)translate:move in x,y axis
+    syntax:
+    transform:translate(20px);
+    transform:translate(-20px,50px);
+
+    transform:translateX(20px);
+             translateY(20px);
+(iv)skew:
+    synatx:transform:skew(30deg);
+
+
+*Animate
+To animate CSS element
+syntax: @keyframe myName{
+            from{font-size:20px;}/starting frame
+            to{font-size:40px;}/end frame
+            }
+
+*Animation Properties
+    (i)animation-myName
+    (ii)animation-duration
+    (iii)animation-timing-function
+    (iv)animation-delay
+    (v)animation-iteration-count/how many times
+    (vi)animation-direction:normal/reverse/alternate/alternate-reverseˀ
+
+*Animation-shorthand
+synatx:name duration timing-func delay iteration direction
+    eg:myName 2s linear 3s infinite normal    
+
+* % in Animation
+syntax:@keyframe myNamez{
+    0%{font-size:20px;}
+    50%{font-size:30px;}
+    100%{font-size:40px;}
+
+}
+
+*free-icon:font aewsome.com
+
+
+
+//
+
+::after 
+The ::after pseudo-element is used to insert content after the content of a selected element.
+ It doesn’t modify the actual content of the element itself but rather adds something visually after the element's content. 
+
+
+***********************
+
+object-fit & Background image
+
+object fit: is used to specify how an <img> or <video> element should fit into its container while preserving its aspect ratio. It works on replaced elements like <img>, <video>, and <iframe>.
+
+Syntax:
+object-fit: fill | contain | cover | none | scale-down;
+
+The object-position property in CSS controls how an image or video is aligned inside its container when it doesn't fill the container completely.
+
+Syntax:
+object-position: x y;
+
+x: Horizontal alignment (e.g., left, center, right, or percentages like 50%).
+y: Vertical alignment (e.g., top, center, bottom, or percentages like 50%).
+
+
+background-image
+Defines an image to use as the background for an element.
+
+Syntax: background-image: url('image.jpg') | none;
+
+background-position
+Specifies the position of the background image within the element.
+
+Syntax: background-position: x y;
+x: Horizontal position (e.g., left, center, right, or 50%, 10px).
+y: Vertical position (e.g., top, center, bottom, or 50%, 10px).
+
+
+background-repeat
+syntax: background-repeat: repeat | repeat-x | repeat-y | no-repeat;
+
+
+
+
+
+****************************************************************************************
+To use tailwind CSS
+
+1.In terminal of main(html file) :   npm install -D tailwindcss@3.4.17 postcss autoprefixer vite
+we are using version -> @3.4.17
+2.To create config files:  npx tailwindcss init -p
+
+3.In tailwind.config.js add ->  content: ["*"] inside {}
+
+4.In package.json add : "scripts":{
+                         "start":"vite"
+                             },
+
+5.In main.css file add  :   @tailwind base;
+                            @tailwind components;
+                            @tailwind utilities;
+6.To run : npm run start
